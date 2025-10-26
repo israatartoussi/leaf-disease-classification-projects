@@ -5,7 +5,7 @@ from .mobilevitv2 import AttnWrapper
 
 class SAM(nn.Module):
     """
-    Spatial Attention Module فقط (نسخة خفيفة).
+    Spatial Attention Module 
     """
     def __init__(self, kernel_size=7):
         super().__init__()
