@@ -4,7 +4,7 @@ set -euo pipefail
 EPOCHS=100
 BS=32
 
-# نشغّل بايثون مع PYTHONPATH مضبوط
+
 py(){ PYTHONPATH=. python -u "$@"; }
 
 DATASETS=(
@@ -27,7 +27,7 @@ TSNE_XLIM="-800 800"; TSNE_YLIM="-800 800"; NCAM=6
 for d in "${DATASETS[@]}"; do
   echo "[$(ts)] ===== DATASET: $d ====="
   for m in "${MODELS[@]}"; do
-    # تخطّي لو التجربة خلصت قبل
+  
     if [ -f "runs/$d/$m/best.ckpt" ]; then
       echo "[$(ts)] >>> SKIP $d / $m (already has best.ckpt)"
       continue
